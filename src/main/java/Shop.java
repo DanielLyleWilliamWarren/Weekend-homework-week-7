@@ -1,27 +1,41 @@
-import Instruments.Guitar;
+import Instruments.*;
 import Instruments.Instrument;
+import Paraphernalia.*;
 
 import java.util.ArrayList;
 
 public class Shop {
 
-        private ArrayList<Instrument> stock;
-        private int till;
+    //        private ArrayList<Paraphernalia> accessoryStock;
+    private ArrayList<Instrument> instrumentStock;
+    private double till;
 
-        public Shop(ArrayList stock, int till){
-            this.stock = new ArrayList<>();
-            this.till = till;
-        }
-
-    public int inventoryCount() {
-        return this.stock.size();
+    public Shop(ArrayList instrumentStock, double till) {
+        this.instrumentStock = new ArrayList<>();
+        this.till = 0.00;
     }
 
-    public void addItem(Guitar guitar) {
-            stock.add(guitar);
+    public int inventoryCount() {
+        return this.instrumentStock.size();
+    }
+
+    public void addItem(Instrument guitar) {
+        instrumentStock.add(guitar);
     }
 
     public void removeItem(Guitar guitar) {
-            stock.remove(0);
+        instrumentStock.remove(0);
     }
+
+    public double getTotalProfits() {
+        double profitMargin = 0.00;
+        for (Instrument instrument : instrumentStock) {
+            profitMargin += instrument.calculateMarkup();
+
+        }
+        return profitMargin;
+    }
+
 }
+
+
