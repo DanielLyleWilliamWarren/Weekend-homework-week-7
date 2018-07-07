@@ -13,4 +13,15 @@ public abstract class Paraphernalia {
 
     }
 
+    public double getStockPrice() {
+        return this.stockPrice;
+    }
+
+    public double getRetailPrice() {
+        return this.retailPrice;
+    }
+
+    public String getProductDescription() {
+        return this.productDescription;
+    }
 }
