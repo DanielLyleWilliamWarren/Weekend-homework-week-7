@@ -27,4 +27,9 @@ public class GuitarStringsTest {
     public void hasProductDescription(){
         assertEquals("Guitar Strings", strings.getProductDescription());
     }
+
+    @Test
+    public void canCalculateMarkup(){
+        assertEquals(5.00, strings.calculateMarkup(), 1);
+    }
 }

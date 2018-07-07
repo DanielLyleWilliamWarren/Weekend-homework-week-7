@@ -23,8 +23,8 @@ public class Shop {
         instrumentStock.add(guitar);
     }
 
-    public void removeItem(Guitar guitar) {
-        instrumentStock.remove(0);
+    public void removeItem(Instrument guitar) {
+        instrumentStock.remove(guitar);
     }
 
     public double getTotalProfits() {

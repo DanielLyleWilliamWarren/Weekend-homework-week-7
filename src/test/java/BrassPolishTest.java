@@ -27,4 +27,9 @@ public class BrassPolishTest {
     public void hasProductDescription(){
         assertEquals("Makes Brass Shine", polish.getProductDescription());
     }
+
+    @Test
+    public void canCalculateMarkup(){
+        assertEquals(2.50, polish.calculateMarkup(), 1);
+    }
 }

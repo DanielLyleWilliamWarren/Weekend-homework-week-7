@@ -6,4 +6,5 @@ public class GuitarStrings extends Paraphernalia {
         super(stockPrice, retailPrice, productDescription);
     }
 
+
 }

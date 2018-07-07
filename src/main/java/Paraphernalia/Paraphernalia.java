@@ -24,4 +24,8 @@ public abstract class Paraphernalia {
     public String getProductDescription() {
         return this.productDescription;
     }
+
+    public double calculateMarkup() {
+        return this.retailPrice - this.stockPrice;
+    }
 }
