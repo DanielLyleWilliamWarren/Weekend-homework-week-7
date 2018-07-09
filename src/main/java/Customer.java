@@ -1,4 +1,5 @@
 import Instruments.Guitar;
+import Instruments.Instrument;
 
 public class Customer {
 
@@ -18,7 +19,7 @@ public class Customer {
         return this.wallet;
     }
 
-    public void buyThing(Guitar guitar) {
+    public void buyThing(Instrument guitar) {
         this.wallet -= guitar.getRetailPrice();
     }
 }

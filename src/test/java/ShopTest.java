@@ -66,15 +66,13 @@ public class ShopTest {
         assertEquals(300.00, shop.getTill(),1);
     }
 
-//    @Test
-//    public void CustomerCanBuyItem(){
-//        shop.addItem(saxaphone);
-//        shop.sellItem(saxaphone);
-//        shop.removeItem(saxaphone);
-//        assertEquals(750.00, shop.getTill(),1);
-//        assertEquals(250, customer.getWallet());
-//    }
-
-
+    @Test
+    public void CustomerCanBuyItem(){
+        shop.addItem(saxaphone);
+        customer.buyThing(saxaphone);
+        shop.removeItem(saxaphone);
+        assertEquals(750.00, shop.getTill(),1);
+        assertEquals(250, customer.getWallet(), 1);
+    }
 
 }
