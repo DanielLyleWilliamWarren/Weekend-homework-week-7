@@ -25,6 +25,7 @@ public class Shop {
 
     public void removeItem(Instrument guitar) {
         instrumentStock.remove(guitar);
+        till += guitar.getRetailPrice();
     }
 
     public double getTotalProfits() {
@@ -36,6 +37,14 @@ public class Shop {
         return profitMargin;
     }
 
+    public double getTill() {
+        return this.till;
+    }
+
+    public void sellItem(Saxaphone saxaphone, Customer customer) {
+        instrumentStock.remove(saxaphone);
+
+    }
 }
 
 

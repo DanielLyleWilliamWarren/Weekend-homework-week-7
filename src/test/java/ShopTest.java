@@ -15,6 +15,7 @@ public class ShopTest {
     Guitar guitar;
     Piano piano;
     Saxaphone saxaphone;
+    Customer customer;
 //    BrassPolish polish;
 //    SheetMusic sheetMusic;
 //    GuitarStrings strings;
@@ -28,6 +29,7 @@ public class ShopTest {
         guitar = new Guitar(InstrumentType.STRING, "Wood", "Beige", 200.00, 300.00, "Gibson Les Paul");
         piano = new Piano(InstrumentType.KEYS, "Oak and Ivory", "Hazelnut brown case, black and white keys", 1000.00, 1500.00, "Grand Piano");
         saxaphone = new Saxaphone(InstrumentType.BRASS, "Brass", "Gold", 500.00, 750.00, "Gerry Rafferty's Sax");
+        customer = new Customer("Dan", 1000.00);
         instrumentStock = new ArrayList();
         shop = new Shop(instrumentStock,0.00);
     }
@@ -51,5 +53,28 @@ public class ShopTest {
         shop.addItem(piano);
         assertEquals(600.00, shop.getTotalProfits(),1);
     }
+
+    @Test
+    public void hasTill(){
+        assertEquals(0.00, shop.getTill(), 1);
+    }
+
+    @Test
+    public void tillIncreasesWhenItemRemoved(){
+        shop.addItem(guitar);
+        shop.removeItem(guitar);
+        assertEquals(300.00, shop.getTill(),1);
+    }
+
+//    @Test
+//    public void CustomerCanBuyItem(){
+//        shop.addItem(saxaphone);
+//        shop.sellItem(saxaphone);
+//        shop.removeItem(saxaphone);
+//        assertEquals(750.00, shop.getTill(),1);
+//        assertEquals(250, customer.getWallet());
+//    }
+
+
 
 }
